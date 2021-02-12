@@ -6,6 +6,17 @@ public class Pawn extends ChessPiece
     super(_pos, _color);
   }
 
+  public static String[] get_tiles(ChessPiece[][] board_)
+  {
+    String[] return_string = new String[]{"",""};
+    for (int i = 0; i < 2; i++)
+    {
+      if (color == "white") return_string[i] = (pos[1]+i+1 <= 7)? board_[pos[1]+i+1][0].color : "";
+      else return_string[i] = (pos[1]-i-1 >= 0)? board_[pos[1]-i-1][0].color : "";
+    }
+    return return_string;
+  }
+
   public Boolean valid_move(int[] new_pos, String[] new_tile_color)
   {
     if (color == "white")
