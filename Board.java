@@ -1,15 +1,15 @@
 public class Board
 {
-  public static ChessPiece[][] board_array;
+  public ChessPiece[][] board_array = new ChessPiece[8][8];
   
-  private static void init_board()
+  public void init_board()
   {
     //Make a bunch of empty pieces where nothing goes
     for (int i = 0; i < 4; i++)
     {
       for (int b = 0; b < 8; b++)
       {
-        board_array[i+2][b] = new ChessPiece(new int[]{i+2, b}, "empty" );
+        board_array[i+2][b] = new ChessPiece(new int[]{i+2, b}, new String("empty") );
       }
     }
     //Make a bunch of pawns
@@ -51,6 +51,5 @@ public class Board
 
   public Board()
   {
-    init_board();
   }
 }
