@@ -26,17 +26,17 @@ public class Board
         String color_ = b==0 ? "white" : "black";
         switch (i)
         {
-          case 1:
+          case 0:
             board_array[b*7][i] = new Rook(new int[]{i,b*7},color_);
-            board_array[b*7][8-i] = new Rook(new int[]{8-i,b*7},color_);
+            board_array[b*7][7-i] = new Rook(new int[]{7-i,b*7},color_);
+            break;
+          case 1:
+            board_array[b*7][i] = new Knight(new int[]{i,b*7},color_);
+            board_array[b*7][7-i] = new Knight(new int[]{7-i,b*7},color_);
             break;
           case 2:
-            board_array[b*7][i] = new Knight(new int[]{i,b*7},color_);
-            board_array[b*7][8-i] = new Knight(new int[]{8-i,b*7},color_);
-            break;
-          case 3:
             board_array[b*7][i] = new Bishop(new int[]{i,b*7},color_);
-            board_array[b*7][8-i] = new Bishop(new int[]{8-i,b*7},color_);
+            board_array[b*7][7-i] = new Bishop(new int[]{7-i,b*7},color_);
             break;
         }
       }
