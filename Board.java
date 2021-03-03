@@ -4,14 +4,7 @@ public class Board
   
   public void init_board()
   {
-    //Make a bunch of empty pieces where nothing goes
-    for (int i = 0; i < 4; i++)
-    {
-      for (int b = 0; b < 8; b++)
-      {
-        board_array[i+2][b] = new ChessPiece(new int[]{i+2, b}, new String("empty") );
-      }
-    }
+    
     //Make a bunch of pawns
     for (int i = 0; i < 8; i++)
     {
@@ -23,7 +16,7 @@ public class Board
     {
       for (int b = 0; b < 2; b++)
       {
-        String color_ = b==0 ? "white" : "black";
+        String color_ = b==0 ? "black" : "white";
         switch (i)
         {
           case 0:
@@ -43,9 +36,18 @@ public class Board
     }
     for (int i = 0;i < 2; i++)
     {
-      String color_ = i==0 ? "white" : "black";
+      String color_ = i==0 ? "black" : "white";
       board_array[i*7][3] = new Queen(new int[]{3, i*7}, color_);
       board_array[i*7][4] = new King(new int[]{4, i*7}, color_);
+    }
+
+//Make a bunch of empty pieces where nothing goes
+    for (int i = 0; i < 4; i++)
+    {
+      for (int b = 0; b < 8; b++)
+      {
+        board_array[i+2][b] = new ChessPiece(new int[]{i+2, b}, new String("empty") );
+      }
     }
   }
 
