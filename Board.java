@@ -8,8 +8,8 @@ public class Board
     //Make a bunch of pawns
     for (int i = 0; i < 8; i++)
     {
-      board_array[1][i] = new Pawn(new int[]{i,1}, "white");
-      board_array[6][i] = new Pawn(new int[]{i,6}, "black");
+      board_array[6][i] = new Pawn(new int[]{i,6}, "white");
+      board_array[1][i] = new Pawn(new int[]{i,1}, "black");
     }
     //Make normal units
     for (int i = 0; i < 3; i++)
