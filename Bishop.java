@@ -16,25 +16,25 @@ public class Bishop extends ChessPiece
     {
       //Top right corner
       x_change = 1;
-      y_change = 1;
+      y_change = -1;
     }
     else if (new_pos[0] > pos[0] && new_pos[1] < pos[1])
     {
       //Bottom right corner
       x_change = 1;
-      y_change = -1;
+      y_change = 1;
     }
     else if (new_pos[0] < pos[0] && new_pos[1] > pos[1])
     {
       //Top Left corner
       x_change = -1;
-      y_change = 1;
+      y_change = -1;
     }
     else
     {
       //Bottom left corner
       x_change = -1;
-      y_change = -1;
+      y_change = 1;
     }
 
     int i = 1;
@@ -52,8 +52,7 @@ public class Bishop extends ChessPiece
 
   public Boolean valid_move(int[] new_pos, ChessPiece[][] board_) {
 
-    if (new_pos[0] == pos[0] || new_pos[1] == pos[1]) return false;
-    System.out.println(String.valueOf(Math.abs((double)(new_pos[1]-pos[1])/(double)(new_pos[0]-pos[0]))));
+    if (new_pos[0] == this.pos[0] || new_pos[1] == this.pos[1]) return false;
     if (Math.abs((double)(new_pos[1]-pos[1])/(double)(new_pos[0]-pos[0])) != 1.0) return false;
     String[] new_tile_color = get_tiles(board_,new_pos);
     System.out.println(Arrays.toString(new_tile_color));
