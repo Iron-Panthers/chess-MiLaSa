@@ -14,27 +14,27 @@ public class Bishop extends ChessPiece
     int y_change = 0;
     if (new_pos[0] > pos[0] && new_pos[1] > pos[1])
     {
-      //Top right corner
-      x_change = 1;
-      y_change = -1;
-    }
-    else if (new_pos[0] > pos[0] && new_pos[1] < pos[1])
-    {
       //Bottom right corner
       x_change = 1;
       y_change = 1;
     }
+    else if (new_pos[0] > pos[0] && new_pos[1] < pos[1])
+    {
+      //Top right corner
+      x_change = 1;
+      y_change = -1;
+    }
     else if (new_pos[0] < pos[0] && new_pos[1] > pos[1])
     {
-      //Top Left corner
+      //Bottom Left corner
       x_change = -1;
-      y_change = -1;
+      y_change = 1;
     }
     else
     {
-      //Bottom left corner
+      //Top left corner
       x_change = -1;
-      y_change = 1;
+      y_change = -1;
     }
 
     int i = 1;
