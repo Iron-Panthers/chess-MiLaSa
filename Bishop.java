@@ -58,8 +58,8 @@ public class Bishop extends ChessPiece
     return return_string;
   }
 
-  public Boolean valid_move(int[] new_pos, ChessPiece[][] board_) {
-
+  public Boolean valid_move(int[] new_pos, ChessPiece[][] board_)
+  {
     // Check to make sure that the piece we're looking at isn't straight across or above from current piece 
     if (new_pos[0] == this.pos[0] || new_pos[1] == this.pos[1]) return false;
     
