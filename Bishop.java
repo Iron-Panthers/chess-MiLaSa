@@ -8,10 +8,14 @@ public class Bishop extends ChessPiece
   
   public String[] get_tiles(ChessPiece[][] board_, int[] new_pos)
   {
+    // This list will store all encountered unit colors on the tracer's path
     List<String> return_string_vector = new ArrayList<String>();
 
+    // x_change and y_change will be different based on the slope of the path the bishop's move is taking
     int x_change = 0;
     int y_change = 0;
+    
+    // Find the slope of the tracer
     if (new_pos[0] > pos[0] && new_pos[1] > pos[1])
     {
       //Bottom right corner
@@ -38,14 +42,19 @@ public class Bishop extends ChessPiece
     }
 
     int i = 1;
+    // Make sure the tracer's position isn't off of the baord
     while ((pos[0]+x_change*i>=0 && pos[0]+x_change*i < 8) && (pos[1]+y_change*i>=0 && pos[1]+y_change*i < 8)) 
     {
+      // Add color to the tracer's list
       return_string_vector.add(board_[pos[1]+y_change*i][pos[0]+x_change*i].color);
       i++;
     }
-  
+    
+    // Convert tracer's vector list into a structured array for program to accept
     String[] return_string = new String[return_string_vector.size()];
     return_string_vector.toArray(return_string);
+    
+    // Return the tracer's path
     return return_string;
   }
 
