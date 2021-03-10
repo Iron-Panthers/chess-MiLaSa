@@ -1,6 +1,6 @@
 public class ChessPiece
 {
-  //Public variable 
+  // Public variables that all chess pieces will inherit
   public int[] pos;
   public String color;
   public ChessPiece(int[] _pos, String _color)
