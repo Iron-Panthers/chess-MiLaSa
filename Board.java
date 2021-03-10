@@ -5,18 +5,20 @@ public class Board
   public void init_board()
   {
     
-    //Make a bunch of pawns
+    // Make a bunch of pawns in spaces above units
     for (int i = 0; i < 8; i++)
     {
       board_array[6][i] = new Pawn(new int[]{i,6}, "white");
       board_array[1][i] = new Pawn(new int[]{i,1}, "black");
     }
-    //Make normal units
+    // Create Special Units ([i < 3] for the three kinds of different special units not counting king and queen)
     for (int i = 0; i < 3; i++)
     {
+      // Variable b will keep in check which color we're writing to
       for (int b = 0; b < 2; b++)
       {
         String color_ = b==0 ? "black" : "white";
+        // Determine piece based on iterator 'i'
         switch (i)
         {
           case 0:
@@ -34,6 +36,7 @@ public class Board
         }
       }
     }
+    // Add king and queen based on color
     for (int i = 0;i < 2; i++)
     {
       String color_ = i==0 ? "black" : "white";
@@ -41,7 +44,7 @@ public class Board
       board_array[i*7][4] = new King(new int[]{4, i*7}, color_);
     }
 
-//Make a bunch of empty pieces where nothing goes
+    // Add a bunch of empty spaces that no other unit is taking up
     for (int i = 0; i < 4; i++)
     {
       for (int b = 0; b < 8; b++)
