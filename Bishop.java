@@ -40,7 +40,6 @@ public class Bishop extends ChessPiece
     int i = 1;
     while ((pos[0]+x_change*i>=0 && pos[0]+x_change*i < 8) && (pos[1]+y_change*i>=0 && pos[1]+y_change*i < 8)) 
     {
-      System.out.println("X-Pos: "+String.valueOf(pos[0]+x_change*i));
       return_string_vector.add(board_[pos[1]+y_change*i][pos[0]+x_change*i].color);
       i++;
     }
@@ -56,6 +55,8 @@ public class Bishop extends ChessPiece
     if (Math.abs((double)(new_pos[1]-pos[1])/(double)(new_pos[0]-pos[0])) != 1.0) return false;
     String[] new_tile_color = get_tiles(board_,new_pos);
     System.out.println(Arrays.toString(new_tile_color));
-      return false;
+    for (int i = 0; i < Math.abs(new_pos[0]-pos[0])-1; i++) if (new_tile_color[i] != "empty") return false;
+    if (new_tile_color[Math.abs(new_pos[0]-pos[0])-1] == this.color) return false;
+    return true;
   }
 }

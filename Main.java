@@ -12,7 +12,7 @@ public class Main
     King new_king = new King(new int[]{1, 1}, "white");
     Pawn new_pawn = new Pawn(new int[]{1, 1}, "white");
 
-    Boolean test = new_bishop.valid_move(new int[]{3,3}, chess_board.board_array);
+    Boolean test = new_bishop.valid_move(new int[]{6,6}, chess_board.board_array);
     System.out.println(test);
   }
 }
