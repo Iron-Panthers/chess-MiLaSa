@@ -8,9 +8,13 @@ public class Pawn extends ChessPiece
 
   public String[] get_tiles(ChessPiece[][] board_)
   {
+    // This is the output string array that will store color properties of pieces ahead of current piece
     String[] return_string = new String[]{"",""};
+    
+    // For loop goes twice, two possible unit spaces above (this ensures that a pawn can be able to check for two above if moving two squares on its first move)
     for (int i = 0; i < 2; i++)
     {
+      // Adds colors to return_string, changes direction based on color
       if (this.color == "white") return_string[i] = (pos[1]+i+1 <= 7)? board_[this.pos[1]+i+1][0].color : "";
       else return_string[i] = (this.pos[1]-i-1 >= 0)? board_[this.pos[1]-i-1][0].color : "";
     }
